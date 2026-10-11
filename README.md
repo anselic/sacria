@@ -31,10 +31,51 @@ There will be builds for VST3 and CLAP. Will be tested on Windows on Ableton Liv
 - Rust and Cargo from [rustup.rs](https://rustup.rs/).
 
 ## Building
-TODO
+- Clone the repo
+- You can either:
+    - Using `bundle.py` script:
+
+        Run the [`bundle.py`](./bundle.py) script to build all plugins and bundle them
+        ```shell
+        # list plugins available to bundle
+        $ python3 bundle.py list
+        vepres           C-VEPRES
+        sanctis          C-SANCTIS
+        # build and bundle all plugins
+        $ python3 bundle.py --all
+        # build and bundle a specific plugin(s)
+        $ python3 bundle.py sanctis vepres
+        # just bundle without building
+        $ python3 bundle.py sanctis vepres --no-build
+        # debug build for faster build time
+        $ python3 bundle.py sanctis vepres --fast
+
+        # example output
+        Created a standalone bundle at '.../C-SANCTIS.exe'
+        Created a CLAP bundle at '...\C-SANCTIS.clap'
+        Created a VST3 bundle at '...\C-SANCTIS.vst3'
+
+        Created a standalone bundle at '.../C-VEPRES.exe'
+        Created a CLAP bundle at '...\C-VEPRES.clap'
+        Created a VST3 bundle at '...\C-VEPRES.vst3'
+        wrote dist\C-SANCTIS-0.1.0-beta.1-win64.zip
+        wrote dist\C-VEPRES-0.1.0-beta.1-win64.zip
+        ```
+        Then copy the .vst3/.clap from `target/bundled` to your plugin folder, or pass `--copy [PATH]` (optional path) to copy VST3 plugin(s) to default/specific plugin folder. (Default is `C:\Program Files\Common Files\VST3`)
+    - With `xtask`:
+        ```shell
+        $ cargo xtask bundle <plugin name> [--release] [--profile fast]
+        ```
+        Then copy the `.vst3`/`.clap` from `target/bundled` to your plugin folder.
+
+    Please note that full release build will take a long time to build, so for iteration and testing pass `--profile fast` to build a debug build instead.
+
 
 # License
 Code is licensed under [GPLv3](./LICENSE).
+
 The presets in this repo are released under CC0 (public domain).
+
 Geist fonts are licensed under [SIL Open Font License 1.1](./assets//fonts/GeistMono-OFL.txt).
+
 Image assets (logo, icons) are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).

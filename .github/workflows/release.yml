@@ -1,0 +1,42 @@
+name: Release build
+
+# Never runs on a plain commit. It runs when:
+#   - you press "Run workflow" in the Actions tab (zips end up as a workflow artifact)
+#   - you publish a GitHub release (zips are also attached to that release)
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  bundle:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Update Rust
+        run: rustup update stable --no-self-update
+
+      - name: Build and zip all plugins
+        run: python bundle.py --all
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: sacria-win64
+          path: dist/*.zip
+          if-no-files-found: error
+
+      - name: Attach zips to the release
+        if: github.event_name == 'release'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" dist/*.zip --clobber
