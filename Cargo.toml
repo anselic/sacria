@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+# cargo xtask bundle vepres --profile fast --lib
+# cargo run -p vepres --profile fast
+[profile.fast]
+inherits = "release"
+lto = false
+codegen-units = 16
+incremental = true

@@ -1,0 +1,12 @@
+[package]
+name = "sacria-ui"
+version = "0.1.0"
+edition = "2021"
+description = "Shared UI kit (egui widgets, fonts, theme) for the Sacria plugins"
+
+[dependencies]
+nice-plug = { git = "https://codeberg.org/RustAudio/nice-plug", rev = "e60b5db09d8606c3dc3e93f982847a00bce17325" }
+egui = { version = "0.36.1", features = ["default_fonts"] }
+png = "0.17"
+serde_json = "1"
+dirs = "6"

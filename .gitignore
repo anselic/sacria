@@ -1,0 +1,6 @@
+# build output
+/target/
+/dist/
+
+# private internal stuff
+/internal/

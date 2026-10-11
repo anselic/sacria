@@ -1,0 +1,17 @@
+[package]
+name = "vepres-engine"
+version = "0.1.0"
+edition = "2021"
+description = "DSP engine for C-VEPRES: M/S 3-band compressor"
+
+[dependencies]
+sacria-dsp = { path = "../sacria_dsp" }
+serde = { version = "1.0.229", features = ["derive"], optional = true }
+wide = "1.7.1"
+
+[dev-dependencies]
+hound = "3.5"
+
+[features]
+serde = ["dep:serde", "sacria-dsp/serde"]
+

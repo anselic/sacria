@@ -1,0 +1,23 @@
+[package]
+name = "sanctis"
+version = "0.1.0-beta.1"
+edition = "2021"
+description = "C-SANCTIS: 3-band mastering glue (VST3/CLAP)"
+publish = false
+
+[lib]
+# `lib` is needed for the standalone target
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+sanctis-engine = { path = "../sanctis_engine" }
+sacria-ui = { path = "../sacria_ui" }
+sacria-dsp = { path = "../sacria_dsp" }
+nice-plug = { git = "https://codeberg.org/RustAudio/nice-plug", rev = "e60b5db09d8606c3dc3e93f982847a00bce17325", features = [
+    "assert_process_allocs",
+    "standalone",
+    "unsafe_standalone_dpi_fix",
+] }
+nice-plug-egui = { git = "https://codeberg.org/RustAudio/nice-plug", rev = "e60b5db09d8606c3dc3e93f982847a00bce17325" }
+egui = { version = "0.36.1", features = ["default_fonts"] }
+atomic_float = "1.1"

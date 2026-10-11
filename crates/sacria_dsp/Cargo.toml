@@ -1,0 +1,12 @@
+[package]
+name = "sacria-dsp"
+version = "0.1.0"
+edition = "2021"
+description = "Shared DSP building blocks for the Sacria plugins"
+
+[dependencies]
+serde = { version = "1.0.229", features = ["derive"], optional = true }
+wide = "1.7.1"
+
+[features]
+serde = ["dep:serde"]

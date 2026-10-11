@@ -1,0 +1,135 @@
+{
+  "version": "0.1.0-beta.1",
+  "params": {
+    "character": {
+      "bool": true
+    },
+    "high_att": {
+      "f32": 3.103
+    },
+    "high_blend": {
+      "f32": 1.0
+    },
+    "high_detect": {
+      "string": "mid"
+    },
+    "high_drive": {
+      "f32": 1.81
+    },
+    "high_knee": {
+      "f32": 0.0
+    },
+    "high_mid": {
+      "f32": 2.0
+    },
+    "high_ratio": {
+      "f32": 1.6159999
+    },
+    "high_rel": {
+      "f32": 89.31
+    },
+    "high_shape": {
+      "string": "sine"
+    },
+    "high_side": {
+      "f32": 2.4
+    },
+    "high_thr": {
+      "f32": -3.8
+    },
+    "input": {
+      "f32": 1.0
+    },
+    "lim_att": {
+      "f32": 131.5
+    },
+    "lim_ceil": {
+      "f32": -0.1
+    },
+    "lim_drive": {
+      "f32": 2.0
+    },
+    "lim_rel": {
+      "f32": 231.8
+    },
+    "low_att": {
+      "f32": 1.502
+    },
+    "low_blend": {
+      "f32": 1.0
+    },
+    "low_detect": {
+      "string": "mid"
+    },
+    "low_drive": {
+      "f32": 2.24
+    },
+    "low_knee": {
+      "f32": 29.1
+    },
+    "low_mid": {
+      "f32": 2.8
+    },
+    "low_ratio": {
+      "f32": 1.18
+    },
+    "low_rel": {
+      "f32": 2010.2
+    },
+    "low_shape": {
+      "string": "soft"
+    },
+    "low_side": {
+      "f32": 0.0
+    },
+    "low_thr": {
+      "f32": -9.7
+    },
+    "mid_att": {
+      "f32": 214.25
+    },
+    "mid_blend": {
+      "f32": 1.0
+    },
+    "mid_detect": {
+      "string": "mid"
+    },
+    "mid_drive": {
+      "f32": 2.3899999
+    },
+    "mid_knee": {
+      "f32": 27.800001
+    },
+    "mid_mid": {
+      "f32": 2.6000001
+    },
+    "mid_ratio": {
+      "f32": 1.269
+    },
+    "mid_rel": {
+      "f32": 91.05
+    },
+    "mid_shape": {
+      "string": "sine"
+    },
+    "mid_side": {
+      "f32": 2.0
+    },
+    "mid_thr": {
+      "f32": -27.7
+    },
+    "mix": {
+      "f32": 1.0
+    },
+    "output": {
+      "f32": 1.0
+    },
+    "quality": {
+      "string": "2x"
+    },
+    "stage": {
+      "string": "clip"
+    }
+  },
+  "fields": {}
+}

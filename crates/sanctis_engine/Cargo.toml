@@ -1,0 +1,16 @@
+[package]
+name = "sanctis-engine"
+version = "0.1.0"
+edition = "2021"
+description = "DSP engine for C-SANCTIS: 3-band mastering compressor / saturator / limiter"
+
+[dependencies]
+sacria-dsp = { path = "../sacria_dsp" }
+serde = { version = "1.0.229", features = ["derive"], optional = true }
+wide = "1.7.1"
+
+[dev-dependencies]
+hound = "3.5"
+
+[features]
+serde = ["dep:serde"]
