@@ -8,6 +8,9 @@ There will be builds for VST3 and CLAP. Will be tested on Windows on Ableton Liv
 > [!NOTE]
 > Eventually, most *DSP engines* will be rewrite in [haven](https://github.com/anselic/haven), but that is non-goal for now. Sacria will be a Rust project for the time being. Plugin wrappers will still be written in Rust.
 
+> [!WARNING]
+> This is a beta version. Use at your own risk and expect breaking changes.
+
 ## List of plugins
 
 - `C-VEPRES`: Opinionated M/S Compressor `v0.1.0-beta.1` [(engine)](./crates/vepres_engine/) [(plugin)](./crates/vepres_plugin/)
