@@ -3,7 +3,7 @@
 //! A preset is a set of parameter values. Built into the plugin is only the
 //! starting point ("Default"); all other presets, also the ones that ship with a
 //! release, are JSON files (a nice-plug `PluginState` without
-//! fields) in `Documents/Anselic/<plugin>/Presets`; a folder in there is a
+//! fields) in `Documents/Anselic/Sacria/<plugin>/Presets`; a folder in there is a
 //! category in the list (one level). A preset is found by its name, so names are
 //! unique across categories. The name of the loaded preset lives in
 //! a persisted field of the plugin's params, so it comes back with the project.
@@ -191,7 +191,7 @@ impl PresetBar {
 
     /// Where the user presets live. None if the system has no documents folder.
     pub fn folder(&self) -> Option<PathBuf> {
-        Some(dirs::document_dir()?.join("Anselic").join(self.plugin).join("Presets"))
+        Some(dirs::document_dir()?.join("Anselic").join("Sacria").join(self.plugin).join("Presets"))
     }
 
     /// Reads the user presets from disk again.

@@ -1,4 +1,4 @@
-# C-VEPRES 0.1.0-beta.1
+# C-VEPRES
 
 Windows, 64-bit. VST3 and CLAP.
 

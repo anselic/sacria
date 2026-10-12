@@ -195,7 +195,7 @@ impl Vepres {
 }
 
 impl Plugin for Vepres {
-    const NAME: &'static str = "C-VEPRES";
+    const NAME: &'static str = "SACRIA C-VEPRES";
     const VENDOR: &'static str = "anselic";
     const URL: &'static str = "";
     const EMAIL: &'static str = "";

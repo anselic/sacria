@@ -22,7 +22,14 @@ jobs:
       - name: Update Rust
         run: rustup update stable --no-self-update
 
+      - uses: Swatinem/rust-cache@v2
+
+      # Cargo.toml uses thin LTO to keep local builds quick. The shipped zips
+      # get fat LTO and one codegen unit.
       - name: Build and zip all plugins
+        env:
+          CARGO_PROFILE_RELEASE_LTO: "true"
+          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "1"
         run: python bundle.py --all
 
       - uses: actions/upload-artifact@v6

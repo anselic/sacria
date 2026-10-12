@@ -1,0 +1,21 @@
+[package]
+name = "prism"
+version.workspace = true
+edition = "2021"
+description = "S-PRISM: key and scale spectral filter (VST3/CLAP)"
+publish = false
+
+[lib]
+# `lib` is needed for the standalone target
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+prism-engine = { path = "../prism_engine" }
+sacria-ui = { path = "../sacria_ui" }
+nice-plug = { git = "https://codeberg.org/RustAudio/nice-plug", rev = "e60b5db09d8606c3dc3e93f982847a00bce17325", features = [
+    "assert_process_allocs",
+    "standalone",
+    "unsafe_standalone_dpi_fix",
+] }
+nice-plug-egui = { git = "https://codeberg.org/RustAudio/nice-plug", rev = "e60b5db09d8606c3dc3e93f982847a00bce17325" }
+egui = { version = "0.36.1", features = ["default_fonts"] }

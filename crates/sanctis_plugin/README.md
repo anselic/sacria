@@ -1,4 +1,4 @@
-# C-SANCTIS 0.1.0-beta.1
+# C-SANCTIS
 
 Windows, 64-bit. VST3 and CLAP.
 
@@ -18,7 +18,7 @@ tuned sound; every part of it has its own control.
 Then rescan plugins in your DAW.
 
 Presets (optional): copy what is inside the `Presets` folder into
-`Documents\Anselic\C-SANCTIS\Presets\` (make the folders if they are not
+`Documents\Anselic\Sacria\C-SANCTIS\Presets\` (make the folders if they are not
 there). Keep the sub-folders: each one shows up as a category.
 
 ## Use
@@ -96,7 +96,7 @@ Output panel:
 - **Presets:** the bar at the top. Click the name for the list, use the arrows
   to step, and the disk to save the current settings under a name (saving over
   an existing preset replaces it). Presets are plain files in
-  `Documents\Anselic\C-SANCTIS\Presets\`; a folder in there is a category.
+  `Documents\Anselic\Sacria\C-SANCTIS\Presets\`; a folder in there is a category.
   `Default` is built in and cannot be replaced. A star after the name means a
   knob moved since the preset was loaded.
 - **Knobs:** drag up/down, hold Shift for fine moves, double-click to reset.

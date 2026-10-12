@@ -343,7 +343,7 @@ impl Sanctis {
 }
 
 impl Plugin for Sanctis {
-    const NAME: &'static str = "C-SANCTIS";
+    const NAME: &'static str = "SACRIA C-SANCTIS";
     const VENDOR: &'static str = "anselic";
     const URL: &'static str = "";
     const EMAIL: &'static str = "";

@@ -16,7 +16,7 @@ Per plugin it expects:
   - a workspace package named <plugin> (version is read from its Cargo.toml)
   - README.md next to that Cargo.toml (README_*.md translations are optional)
   - optional: presets/<NAME>/ in the repo root (e.g. presets/C-SANCTIS/). It goes
-    into the zip as Presets/, for the user's Documents/Anselic/<NAME>/Presets folder.
+    into the zip as Presets/, for the user's Documents/Anselic/Sacria/<NAME>/Presets folder.
 """
 
 import argparse
@@ -71,6 +71,8 @@ def build(plugins, fast):
 
 def zip_release(name, crate_dir):
     version = load_toml(crate_dir / "Cargo.toml")["package"]["version"]
+    if isinstance(version, dict):  # version.workspace = true
+        version = load_toml(ROOT / "Cargo.toml")["workspace"]["package"]["version"]
     readme = crate_dir / "README.md"
 
     bundled = ROOT / "target" / "bundled"

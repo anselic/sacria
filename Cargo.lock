@@ -299,6 +299,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "blur"
+version = "0.1.0-beta.2"
+dependencies = [
+ "blur-engine",
+ "egui",
+ "nice-plug",
+ "nice-plug-egui",
+ "sacria-ui",
+]
+
+[[package]]
+name = "blur-engine"
+version = "0.1.0"
+dependencies = [
+ "sacria-dsp",
+]
+
+[[package]]
 name = "bumpalo"
 version = "3.20.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1396,6 +1414,151 @@ dependencies = [
 ]
 
 [[package]]
+name = "lab-engine"
+version = "0.1.0"
+dependencies = [
+ "hound",
+ "sacria-dsp",
+]
+
+[[package]]
+name = "lab-plugin"
+version = "0.1.0"
+dependencies = [
+ "egui",
+ "lab-engine",
+ "nice-plug",
+ "nice-plug-egui",
+ "sacria-ui",
+]
+
+[[package]]
+name = "lab_air"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_cepstrum"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_choir"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_chroma2"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_chroma3"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_chroma4"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_chroma5"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_chroma6"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_cloud"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_cycle"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_grain"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_linger"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_mosaic"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_pitch"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_revoice"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_shift"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_sort"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
+name = "lab_swap"
+version = "0.1.0"
+dependencies = [
+ "lab-plugin",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2238,6 +2401,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a6394b9e965e73d0a289ee54f589087e2c676aedf60885baf52c76b771e4958"
 
 [[package]]
+name = "prism"
+version = "0.1.0-beta.2"
+dependencies = [
+ "egui",
+ "nice-plug",
+ "nice-plug-egui",
+ "prism-engine",
+ "sacria-ui",
+]
+
+[[package]]
+name = "prism-engine"
+version = "0.1.0"
+dependencies = [
+ "sacria-dsp",
+]
+
+[[package]]
 name = "proc-macro-crate"
 version = "3.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2455,7 +2636,7 @@ dependencies = [
 
 [[package]]
 name = "sanctis"
-version = "0.1.0-beta.1"
+version = "0.1.0-beta.2"
 dependencies = [
  "atomic_float",
  "egui",
@@ -2982,7 +3163,7 @@ dependencies = [
 
 [[package]]
 name = "vepres"
-version = "0.1.0-beta.1"
+version = "0.1.0-beta.2"
 dependencies = [
  "atomic_float",
  "egui",

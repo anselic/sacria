@@ -2,10 +2,15 @@
 resolver = "2"
 members = ["crates/*"]
 
+# One version for the whole Sacria series, the shipped plugins take it with
+# `version.workspace = true`
+[workspace.package]
+version = "0.1.0-beta.2"
+
 [profile.release]
 opt-level = 3
-lto = true
-codegen-units = 1
+lto = "thin"
+codegen-units = 16
 
 # cargo xtask bundle vepres --profile fast --lib
 # cargo run -p vepres --profile fast

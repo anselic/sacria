@@ -13,19 +13,38 @@ There will be builds for VST3 and CLAP. Will be tested on Windows on Ableton Liv
 
 ## List of plugins
 
-- `C-VEPRES`: Opinionated M/S Compressor `v0.1.0-beta.1` [(engine)](./crates/vepres_engine/) [(plugin)](./crates/vepres_plugin/)
+The naming convention currently is:
+- `C-*` for mixing/mastering related plugins
+- `D-*` for distortion/*destruction* related plugins. (None yet)
+- `E-*` for miscellaneous effects plugins (e.g. transition effects). (None yet)
+- `G-*` for granular related plugins. (None yet)
+- `S-*` for spectral related plugins.
+
+Currently, there are these plugins in the Sacria series:
+
+- `C-VEPRES`: Opinionated M/S Compressor [(engine)](./crates/vepres_engine/) [(plugin)](./crates/vepres_plugin/)
 
     A multiband mid/side compressor + limiter designed to glue group of sounds together (e.g. orchestra group, vocals, synths, etc.). Opinionated because I designed the sound I wanted to achieve, so it is not really a general purpose mid/side compressor. But there is still controls to nudge it.
 
-- `C-SANCTIS`: Mastering Multiband Glue `v0.1.0-beta.1` [(engine)](./crates/sanctis_engine/) [(plugin)](./crates/sanctis_plugin/)
+- `C-SANCTIS`: Mastering Multiband Glue [(engine)](./crates/sanctis_engine/) [(plugin)](./crates/sanctis_plugin/)
 
     A mastering multiband compressor + saturator + limiter + more designed be put on the master bus. Should give you a enough freedom to shape the master.
 
+- `S-BLUR`: Per-Partial Attack and Decay [(engine)](./crates/blur_engine/) [(plugin)](./crates/blur_plugin/)
+
+    A spectral smearing plugin. Every partial/bins of the sound gets its own attack and decay time, so hits can swell in and tones can ring out long after the input stops, like a thousand envelope followers.
+
+- `S-PRISM`: Key/Scale Spectral Filter, or a "coloring" plugin [(engine)](./crates/prism_engine/) [(plugin)](./crates/prism_plugin/)
+
+    Like `S-BLUR`, it is a spectral filter with a note mask. Only the bins that sit on or close to the notes of the key/scale will be allowed to pass through.
+
 ## List of modules
-- [sacria_dsp](./crates/sacria_dsp/) - Shared DSP building blocks (biquad, crossover, soft clip, limiter, oversampling, fast math).
+- [sacria_dsp](./crates/sacria_dsp/) - Shared DSP building blocks (biquad, crossover, soft clip, limiter, oversampling, fast math, FFT, STFT, keys and scales).
 - [sacria_ui](./crates/sacria_ui/) - Shared UI kit (egui widgets, fonts, theme).
 - [vepres_engine](./crates/vepres_engine/) - C-VEPRES's DSP engine.
 - [sanctis_engine](./crates/sanctis_engine/) - C-SANCTIS's DSP engine.
+- [blur_engine](./crates/blur_engine/) - S-BLUR's DSP engine.
+- [prism_engine](./crates/prism_engine/) - S-PRISM's DSP engine.
 
 # Build & Install
 
@@ -55,14 +74,14 @@ There will be builds for VST3 and CLAP. Will be tested on Windows on Ableton Liv
 
         # example output
         Created a standalone bundle at '.../C-SANCTIS.exe'
-        Created a CLAP bundle at '...\C-SANCTIS.clap'
-        Created a VST3 bundle at '...\C-SANCTIS.vst3'
+        Created a CLAP bundle at '.../C-SANCTIS.clap'
+        Created a VST3 bundle at '.../C-SANCTIS.vst3'
 
         Created a standalone bundle at '.../C-VEPRES.exe'
-        Created a CLAP bundle at '...\C-VEPRES.clap'
-        Created a VST3 bundle at '...\C-VEPRES.vst3'
-        wrote dist\C-SANCTIS-0.1.0-beta.1-win64.zip
-        wrote dist\C-VEPRES-0.1.0-beta.1-win64.zip
+        Created a CLAP bundle at '.../C-VEPRES.clap'
+        Created a VST3 bundle at '.../C-VEPRES.vst3'
+        wrote dist/C-SANCTIS-0.1.0-version-win64.zip
+        wrote dist/C-VEPRES-0.1.0-version-win64.zip
         ```
         Then copy the .vst3/.clap from `target/bundled` to your plugin folder, or pass `--copy [PATH]` (optional path) to copy VST3 plugin(s) to default/specific plugin folder. (Default is `C:\Program Files\Common Files\VST3`)
     - With `xtask`:

@@ -1,0 +1,8 @@
+[package]
+name = "blur-engine"
+version = "0.1.0"
+edition = "2021"
+description = "DSP engine for S-BLUR: per-partial attack and decay"
+
+[dependencies]
+sacria-dsp = { path = "../sacria_dsp" }

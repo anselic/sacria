@@ -1,0 +1,8 @@
+[package]
+name = "prism-engine"
+version = "0.1.0"
+edition = "2021"
+description = "DSP engine for S-PRISM: key and scale spectral filter with an in-tune ring"
+
+[dependencies]
+sacria-dsp = { path = "../sacria_dsp" }

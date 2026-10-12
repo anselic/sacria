@@ -3,3 +3,9 @@ name = "C-VEPRES"
 
 [sanctis]
 name = "C-SANCTIS"
+
+[blur]
+name = "S-BLUR"
+
+[prism]
+name = "S-PRISM"

@@ -9,4 +9,7 @@ pub mod fastmath;
 pub mod fft;
 pub mod limiter;
 pub mod oversample;
+pub mod rng;
+pub mod scale;
+pub mod stft;
 pub mod util;
